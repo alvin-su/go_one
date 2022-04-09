@@ -23,7 +23,6 @@ func second(c1 <-chan string, c2 chan<- string) {
 }
 
 func Cook(c <-chan string) {
-	for r := range c {
-		fmt.Println(r + "已经准备好，吃顿好的！")
-	}
+	r := <-c
+	fmt.Println(r + "已经准备好了，吃顿好的！")
 }
